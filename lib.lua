@@ -2094,13 +2094,13 @@ function library:init()
                     local toggle = {
                         class = 'toggle';
                         flag = data.flag;
-                        text = '';
-                        tooltip = '';
+                        text = data.text or "";
+                        tooltip = data.tooltip or "";
                         order = #self.options+1;
-                        state = false;
-                        risky = false;
-                        callback = function() end;
-                        enabled = true;
+                        state = data.state or false;
+                        risky = data.risky or false;
+                        callback = data.callback or function() end;
+                        enabled = data.enabled or true;
                         options = {};
                         objects = {};
                     };
@@ -2950,19 +2950,19 @@ function library:init()
                     local slider = {
                         class = 'slider';
                         flag = data.flag;
-                        text = '';
-                        tooltip = '';
-                        suffix = '';
+                        text = data.text or "";
+                        tooltip = data.tooltip or "";
+                        suffix = data.suffix or "";
                         order = #self.options+1;
-                        value = 0;
-                        min = 0;
-                        max = 100;
-                        increment = 1;
-                        callback = function() end;
-                        enabled = true;
-                        dragging = false;
-                        focused = false;
-                        risky = false;
+                        value = data.value or 0;
+                        min = data.min or 0;
+                        max = data.max or 100;
+                        increment = data.increment or 1;
+                        callback = data.callback or function() end;
+                        enabled = data.enabled or true;
+                        dragging = data.dragging or false;
+                        focused = data.focused or false;
+                        risky = data.risky or false;
                         objects = {};
                     };
 
@@ -3192,14 +3192,14 @@ function library:init()
                     local button = {
                         class = 'button';
                         flag = data.flag;
-                        text = '';
-                        suffix = '';
-                        tooltip = '';
+                        text = data.text or "";
+                        suffix = data.suffix or "";
+                        tooltip = data.tooltip or "";
                         order = #self.options+1;
-                        callback = function() end;
-                        confirm = false;
-                        enabled = true;
-                        risky = false;
+                        callback = data.callback or function() end;
+                        confirm = data.confirm or false;
+                        enabled = data.enabled or true;
+                        risky = data.risky or false;
                         objects = {};
                         subbuttons = {};
                     };
@@ -3503,9 +3503,9 @@ function library:init()
                     local separator = {
                         class = 'separator';
                         flag = data.flag;
-                        text = '';
+                        text = data.text or "";
                         order = #self.options+1;
-                        enabled = true;
+                        enabled = data.enabled or true;
                         objects = {};
                     };
 
@@ -3596,15 +3596,15 @@ function library:init()
                     local color = {
                         class = 'color';
                         flag = data.flag;
-                        text = '';
-                        tooltip = '';
+                        text = data.text or "";
+                        tooltip = data.tooltip or "";
                         order = #self.options+1;
-                        callback = function() end;
+                        callback = data.callback or function() end;
                         color = Color3.new(1,1,1);
                         trans = 0;
-                        open = false;
-                        enabled = true;
-                        risky = false;
+                        open = data.open or false;
+                        enabled = data.enabled or true;
+                        risky = data.risky or false;
                         objects = {};
                     };
 
@@ -3762,9 +3762,9 @@ function library:init()
                         input = data.input or "";
                         order = #self.options+1;
                         callback = function() end;
-                        enabled = true;
-                        focused = false;
-                        risky = false;
+                        enabled = data.enabled;
+                        focused = data.focused;
+                        risky = data.risky;
                         objects = {};
                     };
 
@@ -3980,20 +3980,20 @@ function library:init()
                     local bind = {
                         class = 'bind';
                         flag = data.flag;
-                        text = '';
-                        tooltip = '';
-                        bind = 'none';
-                        mode = 'toggle';
+                        text = data.text or "";
+                        tooltip = data.tooltip or "";
+                        bind = data.bind or "None";
+                        mode = data.mode or "toggle";
                         order = #self.options+1;
-                        callback = function() end;
-                        keycallback = function() end;
+                        callback = data.callback or function() end;
+                        keycallback = data.keycallback or function() end;
                         indicatorValue = library.keyIndicator:AddValue({value = 'value', key = 'key', enabled = false});
-                        noindicator = false;
-                        state = false;
-                        nomouse = false;
-                        enabled = true;
-                        binding = false;
-                        risky = false;
+                        noindicator = data.noindicator or false;
+                        state = data.state or false;
+                        nomouse = data.nomouse or false;
+                        enabled = data.enabled or true;
+                        binding = data.binding or false;
+                        risky = data.risky or false;
                         objects = {};
                     };
 
@@ -4153,15 +4153,15 @@ function library:init()
                     local list = {
                         class = 'list';
                         flag = data.flag;
-                        text = '';
-                        selected = '';
-                        tooltip = '';
+                        text = data.text or "";
+                        selected = data.selected or "";
+                        tooltip = data.tooltip or "";
                         order = #self.options+1;
-                        callback = function() end;
-                        enabled = true;
-                        multi = false;
-                        open = false;
-                        risky = false;
+                        callback = data.callback or function() end;
+                        enabled = data.enabled or true;
+                        multi = data.multi or false;
+                        open = data.open or false;
+                        risky = data.risky or false;
                         values = {};
                         objects = {};
                     }
@@ -4357,11 +4357,11 @@ function library:init()
                     local text = {
                         class = 'text';
                         flag = data.flag;
-                        text = '';
-                        tooltip = '';
+                        text = data.text or "";
+                        tooltip = data.tooltip or "";
                         order = #self.options+1;
-                        enabled = true;
-                        risky = false;
+                        enabled = data.enabled or true;
+                        risky = data.risky or false;
                         objects = {};
                     };
 
